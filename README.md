@@ -9,5 +9,5 @@
 ## TO MAKE:
 1. make virtual environment `python -m venv venv`
 2. start virtual environment `source venv/bin/activate`
-3. install dash `pip install dash` 
+3. install dash `pip install dash pandas pandas-datareader` 
 4. start file `python StockTicker.py`
