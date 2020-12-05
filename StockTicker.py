@@ -71,7 +71,7 @@ def update_graph(n_clicks, stock_ticker, start_date, end_date):
     # since stock_ticker is now a list of symbols, create a list of traces
     traces = []
     for tic in stock_ticker:
-        df = web.get_data_tiingo(stock_ticker, start, end, api_key=TIINGO_API_KEY)
+        df = web.get_data_tiingo(tic, start, end, api_key=TIINGO_API_KEY)
         df.index = df.index.get_level_values('date') 
         traces.append({'x':df.index, 'y': df.close, 'name':tic})
     fig = {
