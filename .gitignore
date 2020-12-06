@@ -2,3 +2,7 @@ venv/
 .vscode/
 .env
 .DS_Store
+testing.csv
+tiingo.csv
+yahoo.csv
+data/form_moodetc.csv

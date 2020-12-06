@@ -13,7 +13,6 @@ TIINGO_API_KEY = os.getenv("TIINGO_API_KEY")
 
 app = dash.Dash()
 
-
 app.layout = html.Div([
   html.H1('Stock Ticker Dashboard'),
   html.H3('Enter a stock symbol:'),
@@ -30,7 +29,7 @@ def update_graph(stock_ticker):
   end = datetime(2020, 10, 10)
   df = web.get_data_tiingo(stock_ticker, start, end, api_key=TIINGO_API_KEY)
   df.index = df.index.get_level_values('date') 
-  fig = {'data':[{'x':df.index, 'y':df['close']}], 'layout':{'title':stock_ticker}}
+  fig = {'data':[{'x':df.index, 'y':df['adjClose']}], 'layout':{'title':stock_ticker}}
 
   return fig
 
